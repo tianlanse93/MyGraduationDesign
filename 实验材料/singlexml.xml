@@ -1,0 +1,144 @@
+<PubmedArticle>
+    <MedlineCitation Status="Publisher" Owner="NLM">
+        <PMID Version="1">25881508</PMID>
+        <DateCreated>
+            <Year>2015</Year>
+            <Month>4</Month>
+            <Day>20</Day>
+        </DateCreated>
+        <DateRevised>
+            <Year>2015</Year>
+            <Month>4</Month>
+            <Day>20</Day>
+        </DateRevised>
+        <Article PubModel="Print-Electronic">
+            <Journal>
+                <ISSN IssnType="Electronic">1090-2104</ISSN>
+                <JournalIssue CitedMedium="Internet">
+                    <PubDate>
+                        <Year>2015</Year>
+                        <Month>Apr</Month>
+                        <Day>13</Day>
+                    </PubDate>
+                </JournalIssue>
+                <Title>Biochemical and biophysical research communications</Title>
+                <ISOAbbreviation>Biochem. Biophys. Res. Commun.</ISOAbbreviation>
+            </Journal>
+            <ArticleTitle>GRK6 phosphorylates IκBα at Ser(32)/Ser(36) and enhances TNF-α-induced inflammation.</ArticleTitle>
+            <Pagination>
+                <MedlinePgn/>
+            </Pagination>
+            <ELocationID EIdType="pii">S0006-291X(15)00693-2</ELocationID>
+            <ELocationID EIdType="doi">10.1016/j.bbrc.2015.04.027</ELocationID>
+            <Abstract>
+                <AbstractText NlmCategory="UNASSIGNED">G protein-coupled receptor kinases (GRKs) comprise a family of seven serine/threonine kinases that phosphorylate agonist-activated G protein-coupled receptors (GPCRs). It has recently been reported that GRKs regulate GPCR-independent signaling through the phosphorylation of intracellular proteins. To date, several intracellular substrates for GRK2 and GRK5 have been reported. However, those for GRK6 are poorly understood. Here we identified IκBα, a negative regulator of NF-κB signaling, as a substrate for GRK6. GRK6 directly phosphorylated IκBα at Ser(32)/Ser(36), and the kinase activity of GRK6 was required for the promotion of NF-κB signaling after TNF-α stimulation. Knockout of GRK6 in peritoneal macrophages remarkably attenuated the transcription of inflammatory genes after TNF-α stimulation. In addition, we developed a bioluminescence resonance energy transfer (BRET) probe to monitor GRK6 activity. Using this probe, we revealed that the conformational change of GRK6 was induced by TNF-α. In summary, our study demonstrates that TNF-α induces GRK6 activation, and GRK6 promotes inflammatory responses through the phosphorylation of IκBα.</AbstractText>
+                <CopyrightInformation>Copyright © 2015 Elsevier Inc. All rights reserved.</CopyrightInformation>
+            </Abstract>
+            <AuthorList>
+                <Author>
+                    <LastName>Ohba</LastName>
+                    <ForeName>Yuki</ForeName>
+                    <Initials>Y</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Department of Pharmacology and Toxicology, Graduate School of Pharmaceutical Sciences, Kyushu University, Fukuoka 812-8582, Japan.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author>
+                    <LastName>Nakaya</LastName>
+                    <ForeName>Michio</ForeName>
+                    <Initials>M</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Department of Pharmacology and Toxicology, Graduate School of Pharmaceutical Sciences, Kyushu University, Fukuoka 812-8582, Japan. Electronic address: nakaya@phar.kyushu-u.ac.jp.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author>
+                    <LastName>Watari</LastName>
+                    <ForeName>Kenji</ForeName>
+                    <Initials>K</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Department of Pharmacology and Toxicology, Graduate School of Pharmaceutical Sciences, Kyushu University, Fukuoka 812-8582, Japan.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author>
+                    <LastName>Nagasaka</LastName>
+                    <ForeName>Akiomi</ForeName>
+                    <Initials>A</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Department of Pharmacology and Toxicology, Graduate School of Pharmaceutical Sciences, Kyushu University, Fukuoka 812-8582, Japan.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author>
+                    <LastName>Kurose</LastName>
+                    <ForeName>Hitoshi</ForeName>
+                    <Initials>H</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Department of Pharmacology and Toxicology, Graduate School of Pharmaceutical Sciences, Kyushu University, Fukuoka 812-8582, Japan.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+            </AuthorList>
+            <Language>ENG</Language>
+            <PublicationTypeList>
+                <PublicationType UI="">JOURNAL ARTICLE</PublicationType>
+            </PublicationTypeList>
+            <ArticleDate DateType="Electronic">
+                <Year>2015</Year>
+                <Month>4</Month>
+                <Day>13</Day>
+            </ArticleDate>
+        </Article>
+        <MedlineJournalInfo>
+            <MedlineTA>Biochem Biophys Res Commun</MedlineTA>
+            <NlmUniqueID>0372516</NlmUniqueID>
+            <ISSNLinking>0006-291X</ISSNLinking>
+        </MedlineJournalInfo>
+        <KeywordList Owner="NOTNLM">
+            <Keyword MajorTopicYN="N">BRET</Keyword>
+            <Keyword MajorTopicYN="N">GRK</Keyword>
+            <Keyword MajorTopicYN="N">Inflammation</Keyword>
+            <Keyword MajorTopicYN="N">IκBα</Keyword>
+            <Keyword MajorTopicYN="N">NF-κB</Keyword>
+            <Keyword MajorTopicYN="N">TNF-α</Keyword>
+        </KeywordList>
+    </MedlineCitation>
+    <PubmedData>
+        <History>
+            <PubMedPubDate PubStatus="received">
+                <Year>2015</Year>
+                <Month>3</Month>
+                <Day>19</Day>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="accepted">
+                <Year>2015</Year>
+                <Month>4</Month>
+                <Day>4</Day>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="entrez">
+                <Year>2015</Year>
+                <Month>4</Month>
+                <Day>18</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="pubmed">
+                <Year>2015</Year>
+                <Month>4</Month>
+                <Day>18</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="medline">
+                <Year>2015</Year>
+                <Month>4</Month>
+                <Day>18</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+        </History>
+        <PublicationStatus>aheadofprint</PublicationStatus>
+        <ArticleIdList>
+            <ArticleId IdType="pubmed">25881508</ArticleId>
+            <ArticleId IdType="pii">S0006-291X(15)00693-2</ArticleId>
+            <ArticleId IdType="doi">10.1016/j.bbrc.2015.04.027</ArticleId>
+        </ArticleIdList>
+    </PubmedData>
+</PubmedArticle>
