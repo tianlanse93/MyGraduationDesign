@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.swing.JFrame;
+import javax.swing.JTextPane;
+
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
@@ -25,7 +28,29 @@ public class main {
 		
 //		EntityRecognizer.recognizer(Config.DOC_SET_PATH);
 		
-		Trainner.train(Config.TRAIN_PATH, Config.MODEL_PATH);
-
+//		Trainner.train(Config.TRAIN_PATH, Config.MODEL_PATH);
+//		
+//		Tagger t = new Tagger(new File(Config.MODEL_PATH));
+//		
+//		String res[] = t.getEntities("GRK6 phosphorylates at Ser32 and enhances TNF-α-induced inflammation.", "POSITION");
+//		
+//		for( int i = 0; i < res.length;i++ ){
+//			System.out.println(res[i]);
+//		}
+		
+		
+		
+		String fileContent = FileUtils.getAbstractContent(new File(Config.DOC_SET_PATH).listFiles()[0]);
+		System.out.println(fileContent);
+		JFrame j = new JFrame();
+		j.setSize(1000, 500);
+		JTextPane tp = new JTextPane();
+		j.add(tp);
+		tp.setText(fileContent);
+		j.show();
+		
+		Rlims_p.request("text",fileContent);
+		
+		
 	}
 }

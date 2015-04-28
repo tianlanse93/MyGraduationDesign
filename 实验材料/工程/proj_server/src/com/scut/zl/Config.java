@@ -10,8 +10,8 @@ public class Config {
 			+ "MyGraduationDesign/实验材料/文献文本库/文档集/";
 
 	public static String TRAIN_PATH = BASE_PATH
-			+ "MyGraduationDesign/实验材料/训练&语料库/train.txt";
+			+ "MyGraduationDesign/实验材料/训练语料库/train.txt";
 
 	public static String MODEL_PATH = BASE_PATH
-			+ "MyGraduationDesign/实验材料/训练&语料库/model.crt";
+			+ "MyGraduationDesign/实验材料/训练语料库/model.txt";
 }
