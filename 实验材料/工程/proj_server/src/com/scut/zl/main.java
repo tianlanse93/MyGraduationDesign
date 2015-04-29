@@ -17,7 +17,7 @@ import org.dom4j.io.SAXReader;
 import abner.Tagger;
 
 public class main {
-	public static void main(String args[]) throws Exception {
+	public static void main(String args[]){
 //		try {
 //			XmlParser.parseXml(Config.PATH_XML_FILE+"1.xml");
 //		} catch (Exception e) {
@@ -42,12 +42,13 @@ public class main {
 		
 		String fileContent = FileUtils.getAbstractContent(new File(Config.DOC_SET_PATH).listFiles()[0]);
 		System.out.println(fileContent);
-		JFrame j = new JFrame();
-		j.setSize(1000, 500);
-		JTextPane tp = new JTextPane();
-		j.add(tp);
-		tp.setText(fileContent);
-		j.show();
+		
+//		JFrame j = new JFrame();
+//		j.setSize(1000, 500);
+//		JTextPane tp = new JTextPane();
+//		j.add(tp);
+//		tp.setText(fileContent);
+//		j.show();
 		
 		Rlims_p.request("text",fileContent);
 		

@@ -63,7 +63,6 @@ public class XmlParser {
 		}
 	}
 
-	
 	//增加到文档集里面去
 	private static void addDocSet(String fileName, String fileContent)
 			throws Exception {
