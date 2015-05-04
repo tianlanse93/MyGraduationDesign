@@ -6,11 +6,11 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.HashMap;
 
+import com.scut.zl.bean.Annotation;
 import com.scut.zl.bean.ResultPassage;
 import com.scut.zl.utils.DataConverter;
-
-import sun.net.www.http.HttpClient;
 
 public class Rlims_p {
 	public static void request(String type, String text) {
@@ -20,15 +20,15 @@ public class Rlims_p {
 		String s = sendPost(
 				"http://annotation.dbi.udel.edu/text_mining/bioc/bioc.php",
 				params);
-		
+
 		try {
 			ResultPassage result = DataConverter.xml2ResultPassage(s);
-			System.out.println(result.text);
+			System.out.println( ((Annotation)result.mRelationList.get(0).mAnnotationSet.keySet().iterator().next()).text  );
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	public static String sendPost(String url, String param) {

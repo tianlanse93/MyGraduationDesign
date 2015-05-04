@@ -43,12 +43,6 @@ public class main {
 		String fileContent = FileUtils.getAbstractContent(new File(Config.DOC_SET_PATH).listFiles()[0]);
 		System.out.println(fileContent);
 		
-//		JFrame j = new JFrame();
-//		j.setSize(1000, 500);
-//		JTextPane tp = new JTextPane();
-//		j.add(tp);
-//		tp.setText(fileContent);
-//		j.show();
 		
 		Rlims_p.request("text",fileContent);
 		
