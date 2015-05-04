@@ -1,3 +1,5 @@
+<%@page import="com.scut.zl.bean.DisplayResource"%>
+<%@page import="core.DisplayLogic"%>
 <%@page import="java.util.Collections"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.Comparator"%>
@@ -24,41 +26,24 @@
 
 <%
 	//String a = request.getParameter("HaHa");
-	String fileContent = FileUtils.getAbstractContent(new File(
-			Config.DOC_SET_PATH).listFiles()[1]);
+/* 	String fileContent = FileUtils.getAbstractContent(new File(Config.DOC_SET_PATH).listFiles()[1]);
 	System.out.println(fileContent);
-	HashMap<Integer, List<String>> entityList = Rlims_p
-			.getEntitys(fileContent);
-	fileContent = Rlims_p.result.text;
-	HashMap<String,Annotation> hashMap = Rlims_p.result.mAnnotationMap;
-	System.out.println(hashMap);
-	List<Annotation> annotationList = new ArrayList<Annotation>();
+	ResultPassage result = Rlims_p.request(fileContent); */
 	
-	for(  Iterator k = hashMap.keySet().iterator(); k.hasNext();){
-		String id = (String)k.next();
-		Annotation annotation = hashMap.get(id);
-		annotationList.add(annotation);
-	}
-	
-	Collections.sort(annotationList);
-	System.out.println(annotationList);	
-	int gap = 0;
-	fileContent = "                                                             "+fileContent;
-	for( Annotation a : annotationList){
-		
-		fileContent = DataConverter.insertTag(fileContent,"span","span",a.location[0]+gap,a.location[0]+a.location[1]+gap);
-		gap += DataConverter.insertItemHead.length();
-		gap += DataConverter.insertItemTail.length();
-	}
-	
-	
+	DisplayResource resource = DisplayLogic.getDisplayRes(new File(Config.DOC_SET_PATH).listFiles()[1]);
 %>
+<script type="text/javascript">
+	function myFunction() {
+		document.getElementById("protein_list").innerHTML="ASD";
+	}
+</script>
 
 <body>
 	<h2>原文</h2>
 	<p width=100%>
-		<%=fileContent%>
+		<%=resource.text%>
 	</p>
+
 	<br></br>
 	<br></br>
 
@@ -67,49 +52,37 @@
 		<tr>
 			<td>蛋白质</td>
 			<%
-				String string_substrate = "";
-				for (int i = 0; i < ((List<String>) entityList.get(Rlims_p.TAG_SUBSTRATE)).size(); i++) {
-					string_substrate += ((List<String>) entityList.get(Rlims_p.TAG_SUBSTRATE)).get(i) + "  ";
-				}
+				String string_substrate = DataConverter.getEntitys(Rlims_p.TAG_SUBSTRATE, resource.mEntityMap);
 			%>
-			<td><%=string_substrate%></td>
+			<td id="protein_list"><%=string_substrate%></td>
 		</tr>
-		
+
 		<tr>
 			<td>氨基酸</td>
 			<%
-				String string_acid = "";
-				for (int i = 0; i < ((List<String>) entityList.get(Rlims_p.TAG_ACID)).size(); i++) {
-					string_acid += ((List<String>) entityList.get(Rlims_p.TAG_ACID)).get(i) + "  ";
-				}
+				String string_acid = DataConverter.getEntitys(Rlims_p.TAG_ACID,resource.mEntityMap);
 			%>
 			<td><%=string_acid%></td>
 		</tr>
-		
-		
+
+
 		<tr>
 			<td>激酶</td>
 			<%
-				String string_kinase = "";
-				for (int i = 0; i < ((List<String>) entityList.get(Rlims_p.TAG_KINASE)).size(); i++) {
-					string_kinase += ((List<String>) entityList.get(Rlims_p.TAG_KINASE)).get(i) + "  ";
-				}
+				String string_kinase = DataConverter.getEntitys(Rlims_p.TAG_KINASE,resource.mEntityMap);
 			%>
 			<td><%=string_kinase%></td>
 		</tr>
-		
-		
+
+
 		<tr>
 			<td>位点</td>
 			<%
-				String string_position = "";
-				for (int i = 0; i < ((List<String>) entityList.get(Rlims_p.TAG_POSITION)).size(); i++) {
-					string_position += ((List<String>) entityList.get(Rlims_p.TAG_POSITION)).get(i) + "  " ;
-				}
+				String string_position = DataConverter.getEntitys(Rlims_p.TAG_POSITION, resource.mEntityMap);
 			%>
 			<td><%=string_position%></td>
 		</tr>
-		
+
 
 		<tr>
 
@@ -118,5 +91,17 @@
 
 
 	</table>
+
+	<br></br>
+	<br></br>
+
+	<a>实体关系</a>
+	<table width=1000 border=1px>
+		<tr>
+
+		</tr>
+	</table>
+	
+	<button onclick="myFunction()">点击这里</button>
 </body>
 </html>

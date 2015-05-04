@@ -4,6 +4,8 @@ import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.InputStream;
 import java.io.StringBufferInputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
@@ -13,6 +15,7 @@ import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
+import com.scut.zl.Rlims_p;
 import com.scut.zl.bean.Annotation;
 import com.scut.zl.bean.Node;
 import com.scut.zl.bean.Relation;
@@ -81,13 +84,84 @@ public class DataConverter {
 			}
 		}
 		
-		
-		
-		
-		
 		return passageResult;
 	}
+	
+	
+	public static HashMap<Integer, List<String>> getEntitys(ResultPassage result) {
+		HashMap<Integer, List<String>> mHashMap = new HashMap<Integer, List<String>>();
+		List<String> list_protein = new ArrayList<String>();
+		List<String> list_kinase = new ArrayList<String>();
+		List<String> list_position = new ArrayList<String>();
+		List<String> list_acid = new ArrayList<String>();
+		List<String> list_substrate = new ArrayList<String>();
+		List<String> list_trigger = new ArrayList<String>();
+		mHashMap.put(Rlims_p.TAG_PROTEIN, list_protein);
+		mHashMap.put(Rlims_p.TAG_KINASE, list_kinase);
+		mHashMap.put(Rlims_p.TAG_POSITION, list_position);
+		mHashMap.put(Rlims_p.TAG_ACID, list_acid);
+		mHashMap.put(Rlims_p.TAG_SUBSTRATE, list_substrate);
+		mHashMap.put(Rlims_p.TAG_TRIGGER, list_trigger);
 
+		for (int i = 0; i < result.mRelationList.size(); i++) {
+			Relation relation = result.mRelationList.get(i);
+			for (int j = 0; j < relation.mNodeList.size(); j++) {
+				Node node = relation.mNodeList.get(j);
+
+				Annotation annotation = node.mAnnotation;
+				if (node.role.equals("substrate")) {
+					if (!list_substrate.contains(annotation.text)) {
+						list_substrate.add(annotation.text);
+					}
+				}
+				if (node.role.equals("amino_acid")) {
+					if (!list_acid.contains(annotation.text)) {
+						list_acid.add(annotation.text);
+					}
+				}
+				if (node.role.equals("position")) {
+					if (!list_position.contains(annotation.text)) {
+						list_position.add(annotation.text);
+					}
+				}
+				if (node.role.equals("kinase")) {
+					if (!list_kinase.contains(annotation.text)) {
+						list_kinase.add(annotation.text);
+					}
+				}
+				if (node.role.equals("trigger")) {
+					if (!list_trigger.contains(annotation.text)) {
+						list_trigger.add(annotation.text);
+					}
+				}
+			}
+		}
+
+		return mHashMap;
+	}
+
+	
+	public static String getEntitys(int tag, ResultPassage result) {
+		HashMap<Integer, List<String>> entityMap = getEntitys(result);
+		List<String> stringList = entityMap.get(tag);
+		String entitys = "";
+		for (String s : stringList) {
+			entitys += s + ",   ";
+		}
+		return entitys;
+	}
+	
+	
+	public static String getEntitys(int tag, HashMap<Integer, List<String>> entityMap) {
+		List<String> stringList = entityMap.get(tag);
+		String entitys = "";
+		for (String s : stringList) {
+			entitys += s + ",   ";
+		}
+		return entitys;
+	}
+	
+	
 	/**
 	 * 
 	 * @param oldString  
