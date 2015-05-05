@@ -1,10 +1,12 @@
-package com.scut.zl;
+package core;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.List;
+
+import com.scut.zl.Config;
 
 import abner.Tagger;
 

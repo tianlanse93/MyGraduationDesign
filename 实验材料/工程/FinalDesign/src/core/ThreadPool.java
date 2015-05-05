@@ -5,7 +5,11 @@ import java.util.concurrent.Executors;
 
 public class ThreadPool {
 	
-	public static ExecutorService pool;
+	private static ExecutorService pool;
+	
+	private ThreadPool(){
+		
+	}
 	
 	public static ExecutorService getThreadPool(){
 		if( null == pool ){

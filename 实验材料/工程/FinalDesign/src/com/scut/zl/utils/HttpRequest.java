@@ -1,4 +1,4 @@
-package com.scut.zl;
+package com.scut.zl.utils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,52 +6,8 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
 
-import com.scut.zl.bean.xmlbean.Annotation;
-import com.scut.zl.bean.xmlbean.Node;
-import com.scut.zl.bean.xmlbean.Relation;
-import com.scut.zl.bean.xmlbean.ResultPassage;
-import com.scut.zl.utils.DataConverter;
-
-public class Rlims_p {
-
-	public static final int TAG_PROTEIN = 1;
-	public static final int TAG_KINASE = 2;
-	public static final int TAG_POSITION = 3;
-	public static final int TAG_ACID = 4;
-	public static final int TAG_SUBSTRATE = 5;
-	public static final int TAG_TRIGGER = 6;
-
-	// 原文
-	public static String text;
-	// 经过rlims处理之后的结果
-	public static ResultPassage result;
-
-	public static ResultPassage request(String text) {
-
-		if (null != result && text.equals(Rlims_p.text)) {
-			return result;
-		}
-		String params = "type=text&input=";
-		params += text;
-		String s = sendPost(
-				"http://annotation.dbi.udel.edu/text_mining/bioc/bioc.php?",
-				params);
-		System.out.println(s);
-
-		try {
-			result = DataConverter.xml2ResultPassage(s);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return result;
-	}
-
+public class HttpRequest {
 	public static String sendPost(String url, String param) {
 		PrintWriter out = null;
 		BufferedReader in = null;

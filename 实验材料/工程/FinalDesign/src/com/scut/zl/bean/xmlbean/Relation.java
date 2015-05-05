@@ -1,5 +1,6 @@
-package com.scut.zl.bean;
+package com.scut.zl.bean.xmlbean;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -12,7 +13,7 @@ import java.util.List;
 //<node refid="t3" role="amino_acid"/>
 //</relation>
 
-public class Relation {
+public class Relation implements Serializable{
 	//id
 	public String id;
 	//信息

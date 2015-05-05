@@ -1,6 +1,8 @@
-package com.scut.zl.bean;
+package com.scut.zl.bean.xmlbean;
 
-public class Node {
+import java.io.Serializable;
+
+public class Node implements Serializable{
 	public Annotation mAnnotation;
 	public String role;
 	

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE collection SYSTEM "BioC.dtd">
+<collection>
+	<source>PubMed</source>
+	<date>May 04, 2015</date>
+	<key>rlims_bioc.key</key>
+	<document>
+		<id>0000</id>
+		<passage>
+			<offset>0</offset>
+			<text>PMID - 0000TI - Title not provided .AB - Malignant mesothelioma
+				( MM ) is an aggressive neoplasm causatively associated with
+				exposure to asbestos .MM is rarely responsive to conventional
+				cytotoxic drugs , and the outcome remains dismal .It is , therefore
+				, necessary to identify the signaling pathways that drive MM and to
+				develop new therapeutics specifically targeting the molecules
+				involved .We performed comprehensive RNA sequencing of 12 MM cell
+				lines and four clinical samples using so-called next-generation
+				sequencers .We found 15 novel fusion transcripts including one
+				derived from chromosomal translocation between the large tumor
+				suppressor 1 ( LATS1 ) and presenilin-1 ( PSEN1 ) genes .LATS1 is
+				one of the central players of the emerging Hippo signaling pathway
+				.The LATS1-PSEN1 fusion gene product lacked the ability to
+				phosphorylate yes-associated protein and to suppress the growth of a
+				MM cell line .The wild-type LATS1 allele was undetectable in this
+				cell line , indicating two-hit genetic inactivation of its tumor
+				suppressor function .Using pathway-targeted exon sequencing , we
+				further identified a total of 11 somatic mutations in four Hippo
+				pathway genes ( neurofibromatosis type 2 [NF2] , LATS2 , RASSF1 ,
+				and SAV1 ) in 35% ( 8 of 23 ) of clinical samples .Nuclear staining
+				of yes-associated protein was detected in 55% ( 24 of 44 ) of the
+				clinical samples .Expression and/or phosphorylation of the Hippo
+				signaling proteins , RASSF1 , Merlin (NF2) , LATS1 , and LATS2 , was
+				frequently absent .The frequent alterations of Hippo pathway
+				molecules found in this study indicate the therapeutic feasibility
+				of targeting this pathway in patients with MM .</text>
+			<annotation id="t1">
+				<infon key="rlims_internal_representation">phosphorylation</infon>
+				<location offset="1393" length="33" />
+				<text>Expression and/or phosphorylation</text>
+			</annotation>
+			<annotation id="t2">
+				<infon key="rlims_internal_representation">LATS1</infon>
+				<location offset="1461" length="41" />
+				<text>RASSF1 , Merlin (NF2) , LATS1 , and LATS2</text>
+			</annotation>
+			<relation id="r0">
+				<infon key="PTM_type">phosphorylation</infon>
+				<node refid="t1" role="trigger" />
+				<node refid="t2" role="substrate" />
+			</relation>
+			<relation id="r1">
+				<infon key="PTM_type">phosphorylation</infon>
+				<node refid="t1" role="trigger" />
+				<node refid="t2" role="substrate" />
+			</relation>
+			<relation id="r2">
+				<infon key="PTM_type">phosphorylation</infon>
+				<node refid="t1" role="trigger" />
+				<node refid="t2" role="substrate" />
+			</relation>
+			<relation id="r3">
+				<infon key="PTM_type">phosphorylation</infon>
+				<node refid="t1" role="trigger" />
+				<node refid="t2" role="substrate" />
+			</relation>
+		</passage>
+	</document>
+</collection>

@@ -1,10 +1,11 @@
-package com.scut.zl.bean;
+package com.scut.zl.bean.xmlbean;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class ResultPassage {
+public class ResultPassage implements Serializable{
 
 	//原文
 	public String text;

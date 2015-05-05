@@ -1,4 +1,6 @@
-package com.scut.zl.bean;
+package com.scut.zl.bean.xmlbean;
+
+import java.io.Serializable;
 
 
 //<annotation id="t2"> 
@@ -9,7 +11,7 @@ package com.scut.zl.bean;
 //</text>
 //</annotation>
 
-public class Annotation implements Comparable<Annotation> {
+public class Annotation implements Comparable<Annotation>,Serializable {
 
 	// 唯一标示符
 	public String id;
