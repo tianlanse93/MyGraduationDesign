@@ -7,6 +7,9 @@ import java.util.List;
 
 import com.scut.zl.Config;
 
+import core.concurrence.TaskRunnable;
+import core.concurrence.ThreadPool;
+
 public class PreCacheLogic {
 
 	// 开始预处理
@@ -21,7 +24,7 @@ public class PreCacheLogic {
 			hashMap.put(i,fileList);
 		}
 		
-		//把文件装载进不同的库
+		//把文件装载进不同的线程
 		for (int i = 1; i < list.length; i++) {
 			int whichThread = i/countPerThread;
 			System.out.println(i+"");

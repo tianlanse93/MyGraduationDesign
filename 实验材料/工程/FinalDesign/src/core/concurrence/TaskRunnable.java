@@ -1,4 +1,4 @@
-package core;
+package core.concurrence;
 
 import java.io.BufferedReader;
 import java.io.File;
