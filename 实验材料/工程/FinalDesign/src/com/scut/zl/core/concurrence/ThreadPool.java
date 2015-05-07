@@ -1,4 +1,4 @@
-package core.concurrence;
+package com.scut.zl.core.concurrence;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

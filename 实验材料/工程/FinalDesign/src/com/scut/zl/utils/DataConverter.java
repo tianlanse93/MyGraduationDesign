@@ -3,7 +3,6 @@ package com.scut.zl.utils;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.InputStream;
-import java.io.StringBufferInputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -15,11 +14,13 @@ import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
-import com.scut.zl.Rlims_p;
+import com.scut.zl.bean.DisplayResource;
 import com.scut.zl.bean.xmlbean.Annotation;
 import com.scut.zl.bean.xmlbean.Node;
 import com.scut.zl.bean.xmlbean.Relation;
 import com.scut.zl.bean.xmlbean.ResultPassage;
+import com.scut.zl.core.db.InsertBean;
+import com.scut.zl.rlims.Rlims_p;
 
 public class DataConverter {
 	public static ResultPassage xml2ResultPassage(String xml) throws Exception {
@@ -251,9 +252,11 @@ public class DataConverter {
 	}
 
 	public static void main(String args[]) {
-		String s = "0000PMID - 0000 TI - Title not 0000 provided . AB - In recen 0000 t years , bone marrow-derived mesenchymal stem cells ( BMSCs ) have been demonstrated to exert extensive therapeutic effects on acute liver injury ; however , the underlying mechanisms of these effects have remained to be elucidated . The present study focused on the potential anti‑apoptotic and pro‑regenerative effects of BMSCs in D‑galactosamine ( D‑Gal ) and lipopolysaccharide ( LPS ) ‑induced acute liver injury in rats . An experimental rat acute liver injury model was established by intraperitoneal injection of D‑Gal ( 400 mg/kg ) and LPS ( 80 µg/kg ) . BMSCs and an identical volume of saline were administered via the caudal vein 2 h after the D‑Gal and LPS challenge . Subsequently , the serum samples were collected to detect the levels of alanine aminotransferase and aspartate aminotransferase . Hematoxylin and eosin staining , terminal deoxynucleotidyl transferase‑mediated nick‑end labeling assay and immunohistochemical staining were performed to determine apoptosis , regeneration and histological changes of liver sections . Western blotting and reverse transcription‑quantitative polymerase chain reaction were performed to detect the protein and mRNA expression levels of fibrinogen‑like‑protein 1 ( FGL1 ) , phosphorylated signal transducer and activator of transcription 3 ( p‑STAT3 ) , STAT3 and B‑cell lymphoma 2 ( Bcl‑2 ) and Bcl‑2 associated X protein ( Bax ) in liver tissue samples . The results indicated that intravenous transplantation of BMSCs significantly decreased the levels of alanine aminotransferase and aspartate aminotransferase , and reduced hepatocellular necrosis and inflammatory cell infiltration . Additionally , a terminal deoxynucleotidyl transferase‑mediated nick‑end labeling assay and immunohistochemical staining revealed that BMSC treatment reduced hepatocyte apoptosis and enhanced liver regeneration . Furthermore , Bcl‑2 expression was increased , whilst the protein expression of Bax was reduced . The expression of FGL1 and p‑STAT3 were elevated concurrently with the improvement of liver function . These results demonstrated that BMSCs may provide a promising potential agent for the prevention of acute liver injury via inhibition of hepatocyte apoptosis and acceleration of liver regeneration . The mechanism may be , a least in part , a consequence of the upregulation of FGL1 expression and the induction of STAT3 phosphorylation . NORM=stat 30000";
-
-		System.out.println(insert(s, "0000","integer"));
+		String s = "string \" dsdsds";
+		
+		s = s.replace("\"", "\\\"");
+		
+		System.out.println(s);
 	}
 
 	private static String insert(String text, String item, String classname) {
@@ -302,5 +305,38 @@ public class DataConverter {
 			taggedText = insert(taggedText,s,"trigger");
 		}
 		return taggedText;
+	}
+	
+	public static String relation2String(List<HashMap<Integer, List<String>>> mRelationList){
+		String relationString = "";
+		relationString = mRelationList.toString();
+		return relationString;
+	}
+	public static InsertBean dr2InsertBean(DisplayResource dr){
+		InsertBean bean = new InsertBean();
+		bean.text = dr.text;
+		bean.substrate = getEntitys(Rlims_p.TAG_SUBSTRATE,dr.mEntityMap);
+		bean.kinase = getEntitys(Rlims_p.TAG_KINASE,dr.mEntityMap);
+		bean.position = getEntitys(Rlims_p.TAG_POSITION,dr.mEntityMap);
+		bean.acid = getEntitys(Rlims_p.TAG_ACID,dr.mEntityMap);
+		bean.phosphorylation = getEntitys(Rlims_p.TAG_TRIGGER,dr.mEntityMap);
+		bean.relation = relation2String(dr.mRelationList);
+		
+		bean.text = bean.text.replace("'","\'");
+		bean.substrate = bean.substrate.replace("'","\'");
+		bean.kinase = bean.kinase.replace("'","\'");
+		bean.position = bean.position.replace("'","\'");
+		bean.acid = bean.acid.replace("'","\'");
+		bean.phosphorylation = bean.phosphorylation.replace("'","\'");
+		bean.relation = bean.relation.replace("'","\'");
+		
+		bean.text = bean.text.replace("\"", "\\\"");
+		bean.substrate = bean.substrate.replace("\"", "\\\"");
+		bean.kinase = bean.kinase.replace("\"", "\\\"");
+		bean.position = bean.position.replace("\"", "\\\"");
+		bean.acid = bean.acid.replace("\"", "\\\"");
+		bean.phosphorylation = bean.phosphorylation.replace("\"", "\\\"");
+		bean.relation = bean.relation.replace("\"", "\\\"");
+		return bean;
 	}
 }

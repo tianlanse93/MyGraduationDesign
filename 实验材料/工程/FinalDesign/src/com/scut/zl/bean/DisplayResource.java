@@ -7,11 +7,16 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import com.scut.zl.Config;
-import com.scut.zl.FileUtils;
+import com.scut.zl.config.Config;
 import com.scut.zl.utils.DataConverter;
+import com.scut.zl.utils.FileUtils;
 
 public class DisplayResource implements Serializable {
+	
+	//pmid
+	public String pmid;
+	//文献标题
+	public String title;
 	// 原文
 	public String text;
 	// 实体

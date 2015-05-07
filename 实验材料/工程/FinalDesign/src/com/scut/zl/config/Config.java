@@ -1,4 +1,4 @@
-package com.scut.zl;
+package com.scut.zl.config;
 
 public class Config {
 	public static String BASE_PATH = "/Users/dayu/Documents/毕业论文/";

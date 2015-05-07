@@ -1,4 +1,4 @@
-package com.scut.zl;
+package com.scut.zl.utils;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -11,6 +11,8 @@ import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
+
+import com.scut.zl.config.Config;
 
 public class XmlParser {
 	public static void parseXml(String fileName) throws Exception {

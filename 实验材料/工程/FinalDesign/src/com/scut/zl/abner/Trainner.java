@@ -1,4 +1,4 @@
-package com.scut.zl;
+package com.scut.zl.abner;
 
 import abner.Trainer;
 

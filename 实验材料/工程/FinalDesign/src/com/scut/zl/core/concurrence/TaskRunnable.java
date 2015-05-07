@@ -1,4 +1,4 @@
-package core.concurrence;
+package com.scut.zl.core.concurrence;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -13,12 +13,12 @@ import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.scut.zl.Config;
-import com.scut.zl.FileUtils;
-import com.scut.zl.Rlims_p;
 import com.scut.zl.bean.DisplayResource;
 import com.scut.zl.bean.xmlbean.ResultPassage;
+import com.scut.zl.config.Config;
+import com.scut.zl.rlims.Rlims_p;
 import com.scut.zl.utils.DataConverter;
+import com.scut.zl.utils.FileUtils;
 import com.scut.zl.utils.HttpRequest;
 
 public class TaskRunnable implements Runnable {

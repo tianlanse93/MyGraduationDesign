@@ -1,4 +1,4 @@
-package core;
+package com.scut.zl.core.display;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -16,11 +16,11 @@ import java.io.PrintWriter;
 import java.net.URL;
 import java.net.URLConnection;
 
-import com.scut.zl.Config;
-import com.scut.zl.FileUtils;
 import com.scut.zl.bean.DisplayResource;
 import com.scut.zl.bean.xmlbean.ResultPassage;
+import com.scut.zl.config.Config;
 import com.scut.zl.utils.DataConverter;
+import com.scut.zl.utils.FileUtils;
 import com.scut.zl.utils.HttpRequest;
 
 public class DisplayLogic {

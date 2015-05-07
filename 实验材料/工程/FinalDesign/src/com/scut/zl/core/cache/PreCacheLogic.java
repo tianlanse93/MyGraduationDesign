@@ -1,14 +1,13 @@
-package core;
+package com.scut.zl.core.cache;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import com.scut.zl.Config;
-
-import core.concurrence.TaskRunnable;
-import core.concurrence.ThreadPool;
+import com.scut.zl.config.Config;
+import com.scut.zl.core.concurrence.TaskRunnable;
+import com.scut.zl.core.concurrence.ThreadPool;
 
 public class PreCacheLogic {
 
