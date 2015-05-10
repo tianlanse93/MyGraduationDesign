@@ -314,6 +314,8 @@ public class DataConverter {
 	}
 	public static InsertBean dr2InsertBean(DisplayResource dr){
 		InsertBean bean = new InsertBean();
+		bean.pmid = dr.title.split("\\.")[0];
+		bean.title = dr.title;
 		bean.text = dr.text;
 		bean.substrate = getEntitys(Rlims_p.TAG_SUBSTRATE,dr.mEntityMap);
 		bean.kinase = getEntitys(Rlims_p.TAG_KINASE,dr.mEntityMap);
@@ -322,21 +324,20 @@ public class DataConverter {
 		bean.phosphorylation = getEntitys(Rlims_p.TAG_TRIGGER,dr.mEntityMap);
 		bean.relation = relation2String(dr.mRelationList);
 		
-		bean.text = bean.text.replace("'","\'");
-		bean.substrate = bean.substrate.replace("'","\'");
-		bean.kinase = bean.kinase.replace("'","\'");
-		bean.position = bean.position.replace("'","\'");
-		bean.acid = bean.acid.replace("'","\'");
-		bean.phosphorylation = bean.phosphorylation.replace("'","\'");
-		bean.relation = bean.relation.replace("'","\'");
+		bean.title = zhuanyi(bean.title);
+		bean.text = zhuanyi(bean.text);
+		bean.substrate = zhuanyi(bean.substrate);
+		bean.kinase = zhuanyi(bean.kinase);
+		bean.position = zhuanyi(bean.position);
+		bean.acid = zhuanyi(bean.acid);
+		bean.phosphorylation = zhuanyi(bean.phosphorylation);
+		bean.relation = zhuanyi(bean.relation);
 		
-		bean.text = bean.text.replace("\"", "\\\"");
-		bean.substrate = bean.substrate.replace("\"", "\\\"");
-		bean.kinase = bean.kinase.replace("\"", "\\\"");
-		bean.position = bean.position.replace("\"", "\\\"");
-		bean.acid = bean.acid.replace("\"", "\\\"");
-		bean.phosphorylation = bean.phosphorylation.replace("\"", "\\\"");
-		bean.relation = bean.relation.replace("\"", "\\\"");
 		return bean;
+	}
+	
+	//转义，保存至数据库
+	private static String zhuanyi(String oldString){
+		return oldString.replace("'","\'").replace("\"", "\\\"");
 	}
 }

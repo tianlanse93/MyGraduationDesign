@@ -20,7 +20,7 @@ public class DatabaseHelper {
 	public static final String driver = "com.mysql.jdbc.Driver";
 	public static final String url = "jdbc:mysql://127.0.0.1:3306/";
 	public static final String user = "root";
-	public static final String password = "";
+	public static final String password = "root";
 
 	// 数据库名
 	public static final String DATABASE_NAME = "ArticleData";
@@ -94,7 +94,7 @@ public class DatabaseHelper {
 					+ KEY_SUBSTARTE + " varchar(2000)," + KEY_KINASE
 					+ " varchar(2000)," + KEY_POSITION + " varchar(2000),"
 					+ KEY_ACID + " varchar(2000)," + KEY_PHOSPHORYLATION
-					+ " varchar(2000)," + KEY_RELATION + " varchar(3000) );";
+					+ " varchar(2000)," + KEY_RELATION + " varchar(8000) );";
 			System.out.println(sql);
 			try {
 				statement.execute(sql);
@@ -127,7 +127,7 @@ public class DatabaseHelper {
 	}
 
 	public static void main(String args[]) throws Exception {
-		// createDataBase(DATABASE_NAME);
+		createDataBase(DATABASE_NAME);
 		createTable(TABLE_NAME);
 		putCacheInDatabase();
 	}

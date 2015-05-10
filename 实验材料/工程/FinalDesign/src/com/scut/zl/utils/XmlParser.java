@@ -25,36 +25,44 @@ public class XmlParser {
 		int k = 0;
 		for (Iterator i = list.iterator(); i.hasNext();) {
 			k++;
-			//输入的文件名称
+			// 输入的文件名称
 			String outFileName = "";
-			//输入的文件内容
+			// 输入的文件内容
 			String fileContent = "";
-			//PubmedArticle标签
+			// PubmedArticle标签
 			Element PubmedArticle = (Element) i.next();
-			//MedlineCitation标签
+			// MedlineCitation标签
 			Element MedlineCitation = PubmedArticle.element("MedlineCitation");
-			//！！！最关键的文献标签
-			Element Article = MedlineCitation.element("Article");
-			//最关键的文献的标题
-			Element ArticleTitle = Article.element("ArticleTitle");
-			//文献主体内容
-			Element Abstract = Article.element("Abstract");
-			
-			//输入文件名称设置为序列号+文献的标题
-			outFileName = k + ". " + ArticleTitle.getText();
-			System.out.println(outFileName);
-			
-			//因为linux下面文件名字的最大的长度为256，所以超过了的话要进行裁剪
-			if (outFileName.length() > 250) {
-				outFileName = outFileName.substring(0, 250);
-			}
-			
-			//Abstract有可能为空
-			if( null == Abstract ){
+			if( null == MedlineCitation ){
 				continue;
 			}
 			
-			//Abstract里面有很多段落，段落的列表
+			Element Pmid = MedlineCitation.element("PMID");
+			//PMID可能为空
+			String pmid = Pmid == null ? "unknown" : Pmid.getText();
+			
+			// ！！！最关键的文献标签
+			Element Article = MedlineCitation.element("Article");
+			// 最关键的文献的标题
+			Element ArticleTitle = Article.element("ArticleTitle");
+			// 文献主体内容
+			Element Abstract = Article.element("Abstract");
+
+			// 输入文件名称设置为序列号+文献的标题
+			outFileName = pmid + ". " + ArticleTitle.getText();
+			System.out.println(outFileName);
+
+			// 因为linux下面文件名字的最大的长度为256，所以超过了的话要进行裁剪
+			if (outFileName.length() > 250) {
+				outFileName = outFileName.substring(0, 250);
+			}
+
+			// Abstract有可能为空
+			if (null == Abstract) {
+				continue;
+			}
+
+			// Abstract里面有很多段落，段落的列表
 			List eList = Abstract.elements();
 
 			for (Iterator j = eList.iterator(); j.hasNext();) {
@@ -65,17 +73,15 @@ public class XmlParser {
 		}
 	}
 
-	//增加到文档集里面去
+	// 增加到文档集里面去
 	private static void addDocSet(String fileName, String fileContent)
 			throws Exception {
 		if (fileName.equals("")) {
 			return;
 		}
-		//由于java会把"/"当成子目录处理，所以要替换成：进行区别
+		// 由于java会把"/"当成子目录处理，所以要替换成：进行区别
 		fileName = fileName.replace("/", ":");
-		File file = new File(
-				new File(Config.DOC_SET_PATH),
-				fileName + ".txt");
+		File file = new File(new File(Config.DOC_SET_PATH), fileName + ".txt");
 
 		OutputStream os = new FileOutputStream(file);
 		os.write(fileContent.getBytes());
@@ -83,4 +89,11 @@ public class XmlParser {
 		os.close();
 	}
 
+	public static void main(String args[]) {
+		try {
+			parseXml(Config.PATH_BASE_XML_FILE+"pubmed_result.xml");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

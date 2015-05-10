@@ -1,6 +1,6 @@
 <%@page import="java.util.LinkedList"%>
 <%@page import="java.util.List"%>
-<%@page import="com.scut.zl.Config"%>
+<%@page import="com.scut.zl.config.Config"%>
 <%@page import="java.io.File"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>

@@ -54,6 +54,7 @@ public class TaskRunnable implements Runnable {
 			DisplayResource dr = new DisplayResource();
 			try {
 				passage = DataConverter.xml2ResultPassage(s);
+				dr.title = mFile.getName().substring(0, mFile.getName().length()-4);
 				dr.text = passage.text;
 				dr.mEntityMap = DataConverter.getEntitys(passage);
 				dr.mRelationList = DataConverter.getRelationList(passage);

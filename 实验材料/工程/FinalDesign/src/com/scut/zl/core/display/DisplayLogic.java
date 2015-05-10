@@ -52,6 +52,7 @@ public class DisplayLogic {
 			ResultPassage passage;
 			try {
 				passage = DataConverter.xml2ResultPassage(s);
+				dr.title = fileName.substring(0, fileName.length()-4);
 				dr.text = passage.text;
 				dr.mEntityMap = DataConverter.getEntitys(passage);
 				dr.mRelationList = DataConverter.getRelationList(passage);

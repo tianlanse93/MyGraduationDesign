@@ -1,5 +1,5 @@
 <%@page import="com.scut.zl.bean.DisplayResource"%>
-<%@page import="core.DisplayLogic"%>
+<%@page import="com.scut.zl.core.display.DisplayLogic"%>
 <%@page import="java.util.Collections"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.Comparator"%>
@@ -9,10 +9,10 @@
 <%@page import="java.util.List"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="com.scut.zl.bean.xmlbean.ResultPassage"%>
-<%@page import="com.scut.zl.Rlims_p"%>
+<%@page import="com.scut.zl.rlims.Rlims_p"%>
 <%@page import="java.io.File"%>
-<%@page import="com.scut.zl.Config"%>
-<%@page import="com.scut.zl.FileUtils"%>
+<%@page import="com.scut.zl.config.Config"%>
+<%@page import="com.scut.zl.utils.FileUtils"%>
 <%@page import="com.scut.zl.bean.xmlbean.Annotation"%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -65,7 +65,8 @@ span.trigger {
 
 <body>
 	<h2>原文</h2>
-	<p100%> <%=taggedText%>
+	<h4>标题：<%=resource.title%></h4>
+	<b>内容：</b><p100%> <%=taggedText%>
 	</p>
 
 	<br></br>
