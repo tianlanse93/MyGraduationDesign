@@ -13,10 +13,6 @@ import com.scut.zl.utils.FileUtils;
 
 public class DisplayResource implements Serializable {
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 725061072956556274L;
 	//pmid
 	public String pmid;
 	//文献标题

@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>文件列表</title>
+<title>搜索列表</title>
 <link rel="stylesheet" href="bootstrap.min.css">
 </head>
 <script type="text/javascript">
@@ -83,13 +83,27 @@ p.list-group-item-text {
 </style>
 
 <%
+	boolean isAll = true;
+	int currentPage = Integer.parseInt(request
+			.getParameter("currentPage"));
+	String keyWord = request.getParameter("keyWord");
+	if (null == keyWord || keyWord.equals("")) {
+		isAll = true;
+		keyWord = "";
+	} else {
+		isAll = false;
+	}
 	File[] docList = new File(Config.DOC_SET_PATH).listFiles();
 	List<String> docName = new LinkedList<String>();
 	for (File doc : docList) {
-		docName.add(doc.getName());
+		if (!isAll) {
+			if (doc.getName().contains(keyWord)) {
+				docName.add(doc.getName());
+			}
+		}else{
+			docName.add(doc.getName());
+		}
 	}
-	int currentPage = Integer.parseInt(request
-			.getParameter("currentPage"));
 %>
 <body>
 	<div class="titlebar">
@@ -99,15 +113,14 @@ p.list-group-item-text {
 	<form action="searchpage.jsp?currentPage=1" method="post">
 		<div class="col-md-3 col-sm-3"></div>
 		<div class="col-md-4 col-sm-4">
-			<input name="keyWord" type="pmid" class="form-control" placeholder="请输入Pmid或者关键字">
+			<input name="keyWord" type="pmid" class="form-control"
+				placeholder="请输入Pmid或者关键字" value="<%=keyWord%>">
 		</div>
 		<div class="col-md-2 col-sm-2">
 			<input type="submit" class="form-control" value="搜索">
 		</div>
 	</form>
 	</section>
-
-
 
 	<br></br>
 	<br></br>
@@ -116,14 +129,34 @@ p.list-group-item-text {
 	<br></br>
 
 	<dir>
-		<h3 class="center">All Articles</h3>
+		<%
+			if (docName.size() <= 0) {
+		%>
+		<h3 class="center">Sorry,there is no article found!</h3>
+		<%
+			} else {
+				if (isAll) {
+		%>
+		<h3 class="center">All articles (<%=docName.size()%>篇)</h3>
+		<%
+			} else {
+		%>
+		<h3 class="center">
+			There are
+			<%=docName.size()%>
+			articles about keyword "<%=keyWord%>"
+		</h3>
+		<%
+			}
+			}
+		%>
 
 		<div class="center">
 			<%
-				for (int index = (currentPage-1) * 20; index < docName.size()
+				for (int index = (currentPage - 1) * 20; index < docName.size()
 						&& index < currentPage * 20; index++) {
 					//跳过第一个文件ds_store
-					if (index == 0) {
+					if (docName.get(index).equals(".DS_Store")) {
 						continue;
 					}
 					String s = docName.get(index);
@@ -149,9 +182,6 @@ p.list-group-item-text {
 		</div>
 		<nav>
 		<ul class="pagination center">
-			<li><a href="#" aria-label="Previous"> <span
-					aria-hidden="true">上一页</span>
-			</a></li>
 			<%
 				int tempPage = currentPage;
 				int totalPage = docName.size() / 20 + 1;
@@ -161,17 +191,37 @@ p.list-group-item-text {
 					tempPage = totalPage - 2;
 				}
 			%>
-			<li><a aria-hidden="true" href="?currentPage=<%=tempPage - 2%>"><%=tempPage - 2%></a></li>
-			<li><a href="?currentPage=<%=tempPage - 1%>"><%=tempPage - 1%></a></li>
-			<li><a href="?currentPage=<%=tempPage%>"><%=tempPage%></a></li>
-			<li><a href="?currentPage=<%=tempPage + 1%>"><%=tempPage + 1%></a></li>
-			<li><a href="?currentPage=<%=tempPage + 2%>"><%=tempPage + 2%></a></li>
+			<%
+				if(docName.size()<=0){
+					return;
+				}
+				if (totalPage <= 5) {
+					for (int i = 1; i <= totalPage; i++) {
+			%>
+			<li><a href="?currentPage=<%=currentPage%>&keyWord=<%=keyWord%>"><%=currentPage%></a></li>
+			<%
+				}
+				} else {
+			%>
+			<li><a href="#" aria-label="Previous"> <span
+					aria-hidden="true">上一页</span>
+			</a></li>
+			<li><a
+				href="?currentPage=<%=tempPage - 2%>&keyWord=<%=keyWord%>"><%=tempPage - 2%></a></li>
+			<li><a
+				href="?currentPage=<%=tempPage - 1%>&keyWord=<%=keyWord%>"><%=tempPage - 1%></a></li>
+			<li><a href="?currentPage=<%=tempPage%>&keyWord=<%=keyWord%>"><%=tempPage%></a></li>
+			<li><a
+				href="?currentPage=<%=tempPage + 1%>&keyWord=<%=keyWord%>"><%=tempPage + 1%></a></li>
+			<li><a
+				href="?currentPage=<%=tempPage + 2%>&keyWord=<%=keyWord%>"><%=tempPage + 2%></a></li>
 			<li><a href="#" aria-label="Next"> <span aria-hidden="true">下一页</span>
 			</a></li>
+			<%
+				}
+			%>
 		</ul>
 		</nav>
 	</dir>
-
-
 </body>
 </html>
