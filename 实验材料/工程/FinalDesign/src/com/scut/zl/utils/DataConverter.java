@@ -286,23 +286,23 @@ public class DataConverter {
 		String taggedText = text;
 		List<String> list = entityMap.get(Rlims_p.TAG_SUBSTRATE);
 		for( String s : list ){
-			taggedText = insert(taggedText,s,"substrate");
+			taggedText = insert(taggedText,s,"label label-protein");
 		}
 		list = entityMap.get(Rlims_p.TAG_KINASE);
 		for( String s : list ){
-			taggedText = insert(taggedText,s,"kinase");
+			taggedText = insert(taggedText,s,"label label-kinase");
 		}
 		list = entityMap.get(Rlims_p.TAG_ACID);
 		for( String s : list ){
-			taggedText = insert(taggedText,s,"acid");
+			taggedText = insert(taggedText,s,"label label-acid");
 		}
 		list = entityMap.get(Rlims_p.TAG_POSITION);
 		for( String s : list ){
-			taggedText = insert(taggedText,s,"position");
+			taggedText = insert(taggedText,s,"label label-position");
 		}
 		list = entityMap.get(Rlims_p.TAG_TRIGGER);
 		for( String s : list ){
-			taggedText = insert(taggedText,s,"trigger");
+			taggedText = insert(taggedText,s,"label label-trigger");
 		}
 		return taggedText;
 	}

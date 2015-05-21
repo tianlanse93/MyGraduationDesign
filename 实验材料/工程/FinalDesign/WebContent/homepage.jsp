@@ -54,11 +54,31 @@ div.titlebar {
 	padding-top: 20px;
 	padding-left: 20px;
 }
-h4.table-bordered{
-	padding: 10px;
-	border: 2;
-	border-radius: 5px;
+
+.label-protein {
+  background-color: #f0ad4e;
 }
+
+.label-kinase {
+  background-color: #b94a48;
+  margin-left: 10px;
+}
+
+.label-position{
+  background-color: #5cb85c;
+  margin-left: 10px;
+}
+
+.label-acid {
+  background-color: #5bc0de;
+  margin-left: 10px;
+}
+
+.label-trigger{
+  background-color: #333;
+  margin-left: 10px;
+}
+
 </style>
 
 <%
@@ -93,9 +113,6 @@ h4.table-bordered{
 		<font size="6px" color="#ffffff">标题：<%=resource.title%></font>
 	</div>
 	<div class="container">
-		<h4>
-			PMID：<%=pmid%></h4>
-		<b>原文：</b>
 		<%
 			if (taggedText
 					.contains("PMID - 0000TI - Title not provided .AB - ")) {
@@ -104,12 +121,32 @@ h4.table-bordered{
 						taggedText.length());
 			}
 		%>
-		<h4 class="table table-bordered">
-			<%=taggedText%>
-		</h4>
+		<br></br>
+		<br></br>
+		<h4>一、文献</h4>
+		<table class="table table-bordered" width=100%>
+			<tr>
+				<td>标题：<%=resource.title%></td>
+			</tr>
+			<tr>
+				<td>PMID：<%=pmid%></td>
+			</tr>
+			<tr>
+				<td>内容：<%=taggedText%></td>
+			</tr>
+		</table>
 
-		<br></br> <br></br> <a>文中实体</a>
-		<table class="table table-striped" width=1000>
+		<div>
+			<span class="label label-protein">protein</span>
+			<span class="label label-kinase">kinase</span>
+			<span class="label label-position">position</span>
+			<span class="label label-acid">acid</span>
+			<span class="label label-trigger">trigger</span>
+		</div>
+		
+		<br></br>
+		<h4>二、文中实体</h4>
+		<table class="table table-striped table-bordered" width=1000>
 			<tr>
 				<td>蛋白质</td>
 				<%
@@ -157,8 +194,8 @@ h4.table-bordered{
 
 		</table>
 
-		<br></br> <br></br> <a>实体关系</a>
-		<table class="table table-striped" width=100%>
+		<h4>三、实体关系</h4>
+		<table class="table table-striped table-bordered" width=100%>
 			<tr>
 				<td>关系</td>
 				<td>被修饰的蛋白质</td>
@@ -188,7 +225,6 @@ h4.table-bordered{
 			%>
 		</table>
 
-		<button onclick="myFunction()">点击这里</button>
 	</div>
 </body>
 </html>
