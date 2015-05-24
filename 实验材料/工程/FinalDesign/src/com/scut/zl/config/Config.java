@@ -1,8 +1,8 @@
 package com.scut.zl.config;
 
 public class Config {
-	public static String BASE_PATH = "/Users/dayu/Documents/毕业论文/";
-//	public static String BASE_PATH = "/Users/minghao_zl/Documents/bishe/";
+//	public static String BASE_PATH = "/Users/dayu/Documents/毕业论文/";
+	public static String BASE_PATH = "/Users/minghao_zl/Documents/bishe/";
 
 	public static String PATH_XML_FILE = BASE_PATH
 			+ "MyGraduationDesign/实验材料/文献文本库/已拆分的小文件/";
