@@ -1,0 +1,489 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>PaperPass 最权威中文论文抄袭检测系统</title>
+<style type="text/css">
+<!--
+user_icon {
+color: #FFFFFF;
+}
+html
+{
+overflow-x:hidden;
+overflow-y:auto;
+}
+body,td,th {
+font-family: "微软雅黑";
+font-size: 12px;
+}
+h1,h2,h3,h4,h5,h6 {
+font-family: "宋体";
+}
+p{
+margin-bottom:10px;
+}
+demo_padding {
+line-height: 30px;
+}
+.zhengwen {
+padding-right: 15px;
+padding-left: 5px;
+padding-bottom:100px;
+font-size: 13px;
+line-height: 20px;
+color: #666666;
+}
+.zhengwencenter {
+padding-right: 15px;
+padding-left: 0px;
+margin-bottom:10px;
+font-size: 13px;
+line-height: 20px;
+color: #666666;
+text-align:center
+}
+.neikuang {
+background-color: #EBEBEB;
+border: 1px solid #999999;
+padding-right: 10px;
+padding-left: 10px;
+margin-top:10px;
+margin-left:25px;
+width:300px;
+}
+.shubu{
+height: 20px;
+width: 20px;
+margin-left:25px;
+background-color: #FFFFFF;
+border: 1px solid #999999;
+text-align: center;
+vertical-align: middle;
+display: block;
+color: #666666;
+}
+a.red:link {color:#FF0000}
+a.red:visited {color:#FF0000}
+a.red:hover {color:#000000}
+a.red:active {color:#000000}
+
+a.orange:link {color:#FF6600}
+a.orange:visited {color:#FF6600}
+a.orange:hover {color:#000000}
+a.orange:active {color:#000000}
+
+a.dark:link {color:#666666}
+a.dark:visited {color:#666666}
+a.dark:hover {color:#000000}
+a.dark:active {color:#000000}
+
+a.pagelink:hover {color:#000000}
+a.pagelink:active {color:#000000}
+
+.green{color:#008000}
+.gray{color:#666666}
+.red{color:#FF0000}
+.orange{color:#FF6600}
+a{TEXT-DECORATION:none}
+
+-->
+</style>
+</head>
+<body>
+
+
+<div class="zhengwen">
+<div>
+<span style="margin-left:25px"></span>
+[
+<a class="pagelink" href="paper_1.htm">首页</a>
+<a class="pagelink" href="paper_2.htm">上一页</a>
+<a class="pagelink" href="paper_4.htm">下一页</a>
+<a class="pagelink" href="paper_6.htm">尾页</a>
+页码：3/6页
+]
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">66</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>图4-3</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">67</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>用Java程序实现上述的过程。</span><a href='../sentence_detail/189.htm' target='right' class='orange' >首先XML文件的内容是一种它本身就是一个标示性可扩展标记语言（Extensible Markup Language），我们可以通过一些java开源库提供的API来对其进行解析。</a><span class='green'>dom4j是一个非常优秀的JAVA开源库，处理的效率高，对于这么庞大的文本数据来说，dom4j的处理比其他的开源库的效果会更好。</span><span class='green'>首先对20个 XML文件进行 for遍历，对于每一个文件，遍历每一篇文献( PubmedArticle)从中解析得到一些属性和标签，</span><span class='green'>由于只要文献标题和文献内容，所以直接取( ArticleTitle)和( AbstractText)这两个标签下面的内容，</span><span class='green'>然后再把( AbstractText)内容输出到新建文档中，文档命名为序号( ArticleTitle)。</span><span class='green'>如果我们只在单线程拆分这些文件的话，效率可能不够高，我们也可以用多线程来预处理，</span><span class='green'>用多线程的话，就不用 for遍历这20个文件了，可以直接启动20个线程，每个线程里处理一个文件，</span><span class='green'>启动20个线程的好处就是每个线程都处理不同的文件，不会发生资源互斥的问题。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">68</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>代码里面我先创建一个 XMLParser静态工具类，里面全部实现两个静态方法，一个是解析 XML得到里面的文献标题 articleTitle和文献内容 articleContent，</span><span class='green'>另个是把文献标题和内容输出到一个文本文档里面，构成文档集中的一个文档。</span><a href='../sentence_detail/199.htm' target='right' class='orange' >整个预处理过程的伪代码如图4-4所示。</a><span class='green'>整个处理过程代码中有四个值得注意的地方，一是 XML文件里面有些文献的标题的长度非常长，超过了 linux文件系统下面支持的最大文件名称长度256字节，</span><span class='green'>所以如果出现超过256的字节要进行相应的裁剪。</span><span class='green'>二是有些 PubmedArticle标签下没有包含 Abstract标签，所以在处理的时候要加以判断，如果 Abstract为空的话，</span><span class='green'>那么就跳过这篇文献的处理，如果还继续输出一个空白的 txt文档的话，空的文档对我们的数据挖掘根本没有贡献，</span><span class='green'>反而在文本挖掘的时候或者统计的时候还可能会导致误差。</span><span class='green'>三是有些Abstract标签下面会包含多个子标签，这些子标签里面的内容都是文献的内容，所以在输出的时候要把他们全部输出，不仅仅只输出单个的AbstractText。</span><span class='green'>四是文献标题字符串中会有一些”/”这样的字符，我们把它作为文件名称输出的话，</span><span class='green'>java的 File类会认为这是一个子目录的标示符（类似 dir/ sub里面’/’表示的子目录的意思），</span><span class='green'>所以在处理文献标题的时候要把标题里面的’/’字符用:</span><span class='green'>代替，这样File类就会把这当成文件名称去处理。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">69</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/210.htm' target='right' class='orange' >//文档预处理-生成文档集</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">70</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>main(){</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">71</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>//第一步解析xml文件，把每一篇文献存入List中</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">72</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>List pubmedArticleList = parsexml(xmlFile);</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">73</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>//第二步，对于xml里面的每一篇，都要把它写入文档及文件夹下面</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">74</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>for each pubmedArticle in pubmedArticleList{</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">75</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>addToDocSet(pubmedArticle，docSetPath);</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">76</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>//对于每一篇article增加到文档集</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">77</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>addToDocSe(pubmedArticle，docSetPath){</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">78</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>//1.首先要指定一下文档的名字</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">79</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>//这里采用pmid + title的形式来作为文件名</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">80</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>fileName = pubmedArticle.pmid + pubmedArticle.title;</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">81</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>//2.建立文本文档</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">82</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>//文档的内容为pubmedArticle.content</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">83</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>createFile(fileName，pubmedArticle.content，docSetPath);</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">84</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>图4-4</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">85</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/226.htm' target='right' class='orange' >4.4 命名实体识别和实体关系提取</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">86</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>4.4.1命名实体识别概述</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">87</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>命名实体识别是文本挖掘过程中一个重要的过程，它在文本挖掘中的作用就是找出文本中具有特定意义的实体词语，</span><a href='../sentence_detail/229.htm' target='right' class='orange' >比如说人名，歌名，影视名等等，同样地，生物医学命名实体识别( Biomedical Named Entity Recognition， Biomedical NER)也是生物医学文本挖掘过程中的关键任务，</a><a href='../sentence_detail/230.htm' target='right' class='red' >其目的是从生物医学文本集合中识别出指定类型的名称，如蛋白质、基因、核糖核酸、脱氧核糖核酸等。</a><a href='../sentence_detail/231.htm' target='right' class='red' >这是进一步抽取关系和其他潜在信息的关键步骤。</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">88</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/232.htm' target='right' class='orange' >命名实体识别是整个文本挖掘过程中的关键任务，因为有了识别出的实体，</a><span class='green'>接下来的步骤才可能得到执行，同时它也是非常复杂的任务，里面夹杂着概率统计学，</span><a href='../sentence_detail/234.htm' target='right' class='orange' >人工智能，机器学习，自然语言处理等各方面的学科知识。</a><a href='../sentence_detail/235.htm' target='right' class='orange' >目前命名实体识别的方法主要分成三类，一是基于规则的方法，二是基于词典的方法，</a><a href='../sentence_detail/236.htm' target='right' class='orange' >三是基于概率统计的方法，基于规则的方法就是特定的实体词语在文本中总是以一定的格式和规则呈现的，</a><a href='../sentence_detail/237.htm' target='right' class='orange' >比如说书名，它一般是出现在《》书名号里面的。</a><span class='green'>大多数的实体名词都是没有明显的特征和规则的，所以这种基于规则的实体命名方法非常不精准，而且局限性很大，但是它简单快捷。</span><span class='green'>第二种命名实体识别的方法是基于词典的，它的思想就是把所有我们想研究的实体名词都收录在一本词典上，</span><span class='green'>当在解析文本的时候就回去词典库里面去进行匹配，就像我们去查字典一样，这一方法需要人工录入巨量的词语到词典库里，</span><span class='green'>它在识别词语的时候不会根据上下文的语境来识别，更加不会识别一词多义，有歧义的语法情况，</span><span class='green'>只能匹配词典库里的词语，词典库里面有就能匹配，没有就不能匹配，所以这种方法在处理人类语言的时候不免捉襟见肘，</span><span class='green'>漏洞百出。</span><a href='../sentence_detail/244.htm' target='right' class='orange' >第三种实体识别的方法是基于概率统计的方法，也可以说成是基于机器学习的方法，这种方法也是在当今命名实体识别领域里面研究的重点，</a><a href='../sentence_detail/245.htm' target='right' class='orange' >因为这种方法能够较为精确地识别出文本中的实体名词。</a><span class='green'>它能够根据上下文语义环境来识别出里面的文本中的实体，并且能够识别出一词多义的词语。</span><span class='green'>它的主要思想就是我们人工的将训练文档集中的实体名词找出来，并给其赋予一个词性标注，</span><span class='green'>再根据上下文关系统计出一套可以让计算机学习的识别模型（语料库），然后计算机就能够根据这个模型来识别出未知文本中的实体名词了。</span><span class='green'>这样说的比较抽象，打个比方，我们要识别 south china university of technology（华南理工大学）这个学校实体名词，</span><span class='green'>首先我们的（识别模型）语料库里面有了这个词语，并且这个词语我们已经给与了其学校词性的标注，</span><a href='../sentence_detail/251.htm' target='right' class='orange' >统计出了五个单词中每个单词出现在这五个单词中的概率和出现在整个语料库的次数，</a><span class='green'>接下来有了这套概率，</span><span class='green'>计算机在识别未知文本中的 south| china| university| of| technology词语的时候就每个单词出现在上</span><span class='green'>下文的环境下的概率最高的就是当它出现在语料库中词组 south china university of technology学校实体名词，</span><span class='green'>这样计算机就识别出了一个学校实体名词。</span><a href='../sentence_detail/256.htm' target='right' class='orange' >目前有很多种建立语料库的概率模型，如贝叶斯模型、隐马尔可夫模型、支持向量机等等，这些方法都需要大量的训练数据，但是相对准确。</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">89</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>4.4.2 ABNER命名实体识别工具</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">90</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>生物医学领域上的应用非常广泛， ABNER， BallE等工具是比较出着名的命名实体识别的工具，本文以 ABNER为实验工具来进行实验和开发，</span><a href='../sentence_detail/259.htm' target='right' class='orange' >我们选择它的原因主要是第一，它是基于 JAVA平台下开发的软件；</a><span class='green'>第二，它是一个开源的系统；</span><span class='green'>第三，它能够提供给我们JAVA的API接口，可以让我们进行第二次开发，我们能够把它的代码嵌入到我们的系统中去。</span><span class='green'>图4-5是Abner工具一个简单的界面。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">91</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>图4-5</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">92</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>ABNER是一款用于生物医学文本分析的软件，主要用于识别生物医学实体，它所使用的识别的方法就是基于统计概率的方法，</span><span class='green'>首先它包含了 NLPBA和 BioCreative两个庞大的语料库其中包含了绝大多数已经发现的生物医学的实体，这两个语料库的 F1测度分别是70.5和69.9。</span><a href='../sentence_detail/266.htm' target='right' class='orange' >它目前能够识别出得实体的类型大致有五类：</a><a href='../sentence_detail/267.htm' target='right' class='red' >蛋白质，DNA，RNA， 细胞系，细胞类型。</a><span class='green'>此外，它不仅提供我们识别命名实体的接口，还提供了训练数据集、培养语料库的接口，所以理论来说，</span><span class='green'>我们只要有足够多的语料库，我们就可以识别更多类型的实体，也不仅仅仅限于生物医学实体的识别。</span><span class='green'>ABNER本质上就是一个基于概率统计的机器学习系统，采用了基于上下文特征的线性条件随机场的方法，线性条件随机场方法又是建立在隐马尔科夫模型（ Hidden Markov Model，</span><span class='green'>HMM）上的，隐马尔科夫模型是一个可以通过可观察到的状态（好比文本单词，这是我们可以观察到的状态）根据相关概率去发现隐藏的状态（好比文本单词的词性标注，</span><span class='green'>单词词性标注是我们未知），所以如果发现了未知文本的词性标注，就可以识别出了实体。</span>
+</p>
+</div>
+
+
+<div>
+<span style="margin-left:25px"></span>
+[
+<a class="pagelink" href="paper_1.htm">首页</a>
+<a class="pagelink" href="paper_2.htm">上一页</a>
+<a class="pagelink" href="paper_4.htm">下一页</a>
+<a class="pagelink" href="paper_6.htm">尾页</a>
+页码：3/6页
+]
+</div>
+
+<br><br><br>
+<div style="margin-left:25px">
+
+<img src="../../images/guanwang.gif">
+</div>
+</div>
+
+
+<div class="zhengwencenter">
+<p>
+检测报告由<a href="http://www.paperpass.com/" target="_blank">PaperPass</a>文献相似度检测系统生成
+</p>
+<p>
+Copyright © 2007-2015 PaperPass
+</p>
+</div>
+<div style="margin-bottom:400px"></div>
+</body>
+</html>

@@ -1,0 +1,697 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>PaperPass 最权威中文论文抄袭检测系统</title>
+<style type="text/css">
+<!--
+user_icon {
+color: #FFFFFF;
+}
+html
+{
+overflow-x:hidden;
+overflow-y:auto;
+}
+body,td,th {
+font-family: "微软雅黑";
+font-size: 12px;
+}
+h1,h2,h3,h4,h5,h6 {
+font-family: "宋体";
+}
+p{
+margin-bottom:10px;
+}
+demo_padding {
+line-height: 30px;
+}
+.zhengwen {
+padding-right: 15px;
+padding-left: 5px;
+padding-bottom:100px;
+font-size: 13px;
+line-height: 20px;
+color: #666666;
+}
+.zhengwencenter {
+padding-right: 15px;
+padding-left: 0px;
+margin-bottom:10px;
+font-size: 13px;
+line-height: 20px;
+color: #666666;
+text-align:center
+}
+.neikuang {
+background-color: #EBEBEB;
+border: 1px solid #999999;
+padding-right: 10px;
+padding-left: 10px;
+margin-top:10px;
+margin-left:25px;
+width:300px;
+}
+.shubu{
+height: 20px;
+width: 20px;
+margin-left:25px;
+background-color: #FFFFFF;
+border: 1px solid #999999;
+text-align: center;
+vertical-align: middle;
+display: block;
+color: #666666;
+}
+a.red:link {color:#FF0000}
+a.red:visited {color:#FF0000}
+a.red:hover {color:#000000}
+a.red:active {color:#000000}
+
+a.orange:link {color:#FF6600}
+a.orange:visited {color:#FF6600}
+a.orange:hover {color:#000000}
+a.orange:active {color:#000000}
+
+a.dark:link {color:#666666}
+a.dark:visited {color:#666666}
+a.dark:hover {color:#000000}
+a.dark:active {color:#000000}
+
+a.pagelink:hover {color:#000000}
+a.pagelink:active {color:#000000}
+
+.green{color:#008000}
+.gray{color:#666666}
+.red{color:#FF0000}
+.orange{color:#FF6600}
+a{TEXT-DECORATION:none}
+
+-->
+</style>
+</head>
+<body>
+
+
+<div class="zhengwen">
+<div>
+<span style="margin-left:25px"></span>
+[
+<a class="pagelink" href="paper_1.htm">首页</a>
+<a class="pagelink" href="paper_1.htm">上一页</a>
+<a class="pagelink" href="paper_3.htm">下一页</a>
+<a class="pagelink" href="paper_6.htm">尾页</a>
+页码：2/6页
+]
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">23</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>图3-1</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">24</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>3.3 用户用例分析</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">25</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>需求我们已经知晓了，在这基础上，我们要建立一条完整地用户使用示例，这样我们才能了解整个系统的来龙去脉。</span><span class='green'>假设一个用户需要在 Pubmed生物医学文献检索系统中找出蛋白质磷酸化修饰的一些信息，用户可能想要输入关键词 phosphorylate（磷酸化），</span><span class='green'>然后用户想得到所有（当然不可能找出所有的被磷酸化修饰的蛋白质，有些蛋白质研究人员们还在进一步在探索，</span><span class='green'>这里的所有指的是目前已经发现的并且已经被收录于 MEDLINE文献数据库中的所有被磷酸化修饰过的蛋白质）被磷酸化修饰过的蛋白质，</span><span class='green'>以及修饰的激酶和修饰的位点，并且这些数据以一种直观、可视化的图表来展示在他面前。</span><span class='green'>简单抽象一点概括的话，用户输入一个pubmed文献，然后期望得到一个可视化的图表。</span><a href='../sentence_detail/99.htm' target='right' class='orange' >图3-2展示了用户和系统这样一种关系。</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">26</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>图3-2</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">27</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>根据用户用例分析，接来下把用户和系统交互的流程按照时间顺序来列出来，于是可以设计出时序图如图3-3所示。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">28</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>图3-3</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">29</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>3.4 系统设计</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">30</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>3.4.1 系统工作流程和场景</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">31</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>根据以上需求描述和用户用例分析，我们首先可以建立起用户和系统的工作场景，图3-4展示了用户和整个系统的一个工作场景。</span><span class='green'>从图中可以看出整个工作环境下有两大类，一个是客户，一个是服务，这就是典型的客户端-服务端（C/S）架构的模式，在论文中稍后会提及到这种架构。</span><span class='green'>从图发现整个系统主要处理工作流程的是在服务端，于是结合上述所有，我把此次的系统工作流程大致的分成以下5个步骤：</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">32</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/108.htm' target='right' class='orange' >1、从Pubmed文献数据库中获取有关蛋白质磷酸化修饰相关的文献；</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">33</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/109.htm' target='right' class='orange' >2、对这些原始文献文本做一次预处理，整理出具有一定格式的文档集；</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">34</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/110.htm' target='right' class='orange' >3、针对于文档集中的每一个文档，识别出文档里面的命名实体；</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">35</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/111.htm' target='right' class='orange' >4、挖掘出这些命名实体之间的关系；</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">36</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/112.htm' target='right' class='orange' >5、对挖掘出来的数据和关系进行可视化处理。</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">37</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>图3-4</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">38</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>3.4.2 模块化设计</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">39</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>根据以上总结的5大工作流程，我们可以发现以上5个步骤顺序执行，下一个步骤总是依赖上一个步骤，并使用上一个步骤产生的数据作为这一步的输入数据。</span><a href='../sentence_detail/116.htm' target='right' class='orange' >每一个步骤都有一个输入数据和输出数据，由上往下以此传递。</a><span class='green'>所以我们在实现整套系统的时候要依次实现这5个步骤，并且每个步骤都有一个input和output。</span><span class='green'>每一个步骤都有一个明确的功能，我们可以把每一个步骤对应地划分成系统的各个模块，然后以其功能来命名。</span><span class='green'>这样我们就可以把它划分成文本预处理模块，命名实体识别模块，实体关系提取模块，数据可视化模块五大模块。</span><a href='../sentence_detail/120.htm' target='right' class='red' >系统整体设计图如图3-6所示。</a><span class='green'>由图3-5可以看出各个模块的输入和输出总结如下表格图3-5所示。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">40</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>表3-5</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">41</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/123.htm' target='right' class='orange' >模块名称输入数据输出数据</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">42</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/124.htm' target='right' class='orange' >文本预处理粗糙、冗余的文件具有一定格式的文档集</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">43</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/125.htm' target='right' class='orange' >命名实体识别具有一定格式的文档集被标注命名实体的文档集</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">44</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/126.htm' target='right' class='orange' >实体关系提取被标注命名实体的文档集实体、关系</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">45</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/127.htm' target='right' class='orange' >数据可视化实体，关系实体+关系图表（统计）</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">46</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>图3-6</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">47</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>各个模块内部遵循模块相互独立原则，仅在模块的出口和入口提供对外数据交接的接口，这样就便于以后维护方便。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">48</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>3.4.3 软件开发架构</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">49</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/131.htm' target='right' class='orange' >从系统的使用场景图3-4上来看，我们采用 C/ S（客户端/服务器）的架构来实现整套系统，</a><span class='green'>因为从用户用例上，这是基于请求—响应式的模型的事件过程，这也是典型的 C/ S架构的模型，</span><span class='green'>所以采取 C/ S架构是非常贴切的。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">50</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>由于文本集数量庞大，在处理这么多文档集的时候会非常耗时，所以显然不能时时同步响应用户的请求，</span><span class='green'>当然也不能处理完所有的文档再响应用户的请求，因为处理完所有的文档集再返回给用户，</span><span class='green'>用户就回觉得系统响应非常慢，非常卡，从而造成用户体验效果不佳。</span><span class='green'>所以我们服务端方面要每处理完一篇文档的时候就及时的返回数据给用户，直至处理完所有的文档集。</span><span class='green'>这样的话，有数据时时返回，虽然不是全部的数据，但是用户就不会觉得卡，反应慢。</span><a href='../sentence_detail/139.htm' target='right' class='orange' >客户端方面，要做到异步加载服务端传回的数据并展示。</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">51</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>为了加快系统的运行效率，服务端在处理文档集的时候应当采用多线程的方式，并发处理每一篇文献，</span><span class='green'>因为在处理每一篇文献的事件是相互独立的，前提是每个线程在处理资源的时候，不能同时访问同一个文件，</span><span class='green'>因为这样的话，可能会导致结果有重复，所以在线程调度方面，对于同一个文件的处理的时候要加上互斥锁，</span><span class='green'>以保证每个线程在相同时刻都在处理不同的文件。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">52</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>3.4.4 开发环境</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">53</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>开发语言；</span><span class='green'>Java 、操作系统：</span><span class='green'>MacOS</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">54</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>Java是一种跨平台式的语言，可以方便移植到不同平台使用，所以此次开发主要采用Java语言。</span><a href='../sentence_detail/149.htm' target='right' class='orange' >采用J2EE里的JSP和java servlet作为服务端的开发架构，客户端就可以认为是H5网页前端。</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">55</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/150.htm' target='right' class='red' >第四章 程序设计和系统实现</a>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">56</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>4.1 程序设计</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">57</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>程序的主体是服务端，而客户端简单的来说就是前端H5网页通过浏览器就可以打开，所以服务端最后返回的数据是html，css，js等等。</span><span class='green'>服务端的开发采用的是Jsp+Tomcat技术。</span><a href='../sentence_detail/154.htm' target='right' class='orange' >图4-1展示了服务端内部的一个大致的结构，从图中可以看出来整个程序分文三个大区域，</a><span class='green'>第一是资源区，这个主要是托管一些文档、缓存、数据库这样一些体积比较庞大的资源，</span><span class='green'>第二个是主程序逻辑控制区，这个区域是运行的是程序的主线的逻辑，从请求的开始到返回这里面复杂的逻辑过程都是由主线来严格控制。</span><span class='green'>第三个区是文档处理区，由于文档处理这一步非常耗时，里面的逻辑也非常复杂，但是功能相对独立，所以我就把它单独列出来，相当于是程序的一个分支。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">58</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>图4-1</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">59</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>4.2 文本数据源获取</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">60</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>由于需求提出者提出了主要针对蛋白质磷酸化修饰的信息挖掘，所以关键词即为’磷酸化’（phosphorylate）。</span><span class='green'>Pubmed文献检索系统上收录的大部分是以英文为语言的生物医学文献，所以我们要把关键字’磷酸化’翻译成phosphorylate来作为Pubmed文献检索系统的关键词。</span><span class='green'>Pubmed文献检索系统支持 AND和 OR来接连关键词，这样就可以限制和放宽检索的范围，</span><span class='green'>因为此次研究的对象是整个和磷酸化有关的蛋白质文献，所以我们在输入关键词的时候把磷酸化的主动式（ phosphorylate）和被动式（ phosphorylated）两个词通过 OR的方式来扩大检索的范围，</span><a href='../sentence_detail/164.htm' target='right' class='orange' >通过检索后，最后我们从中得到了76604个文献文本结果。</a><span class='green'>文献结果以XML的文件格式下载到本地文件系统上面，这样我们就得到了一个最原始的文本数据。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">61</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>通过以上方法得到了单一的文件，里面包含了76604篇有关磷酸化的文献，文件大小1.05 GB，</span><span class='green'>一共2000多万行，这么大的文件肯定不能同时加载到内存里去处理，所以我就把这么大的文件拆分成20个50多 M的小文件，</span><span class='green'>这样每个文件里包含了3000-4000篇的文献，用1-20来对每个拆分过的文件命名，这样下来，</span><span class='green'>我们就得到了20个 XML文件如图4-3所示，这20个文件就是我们文本数据源，也是文本数据获取模块的输出，</span><span class='green'>文本预处理模块的输入。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">62</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>图4-2</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">63</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>4.3 文本预处理</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">64</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><a href='../sentence_detail/173.htm' target='right' class='orange' >文本预处理是文本挖掘中的一个关键的步骤，预处理的结果可以直接影响到最终挖出数据的质量和效果，所以这一步非常关键。</a><span class='green'>文本预处理的主要的思想就是把源文本数据简单化，结构化，便于下一步的处理。</span>
+</p>
+</div>
+
+<div>
+<p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left" width="50"><div class="shubu">65</div></td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<span style="margin-left:25px"></span><span class='green'>经过上一步的处理，已经得到了源文本数据，这一步就对这些源文本数据作进一步的处理。</span><span class='green'>仔细观察这20个 XML文件的内容，图4-3展示了一篇 XML的大致格式，</span><span class='green'>发现里面对一篇文献描述的时候附加了很多的信息，比如说创建日期、收录日期、公司版权、作者等等，</span><span class='green'>这些信息都是我们不关注的，无关紧要的信息，但是却占用非常大的空间内存，</span><span class='green'>同时这些冗余的数据可能还会对接下来的文本处理带来不必要的麻烦。</span><span class='green'>我们只关注数据是这篇文献的标题( ArticleTitle)，文献内容( ArticleTitle)， pubmed_ ID标示符( PMID)，</span><span class='green'>所以在文本预处理的阶段，我们要把这些冗余，无关紧要的数据给去掉，只要求保留 Pubmed标示符、文献标题、文献内容这三个关键数据。</span><a href='../sentence_detail/182.htm' target='right' class='orange' >这样下来，我们就做到简化了数据的目的。</a><span class='green'>接下来我们要使这些文本数据具有一定的结构（这里的结构化并不是只能被计算机直接识别的那种结构化）。</span><span class='green'>于是我们把每一个文件里面的3000-4000文献拆分成3000-4000个小 txt文档， txt文档的文件名就是序号加文献标题，</span><span class='green'>txt文档里的内容就是文献内容，于是我们就可以得到70000多个文献文档，这就是我们对文本预处理之后得到的文档集（ Document Set），</span><span class='green'>每一篇文档都对应于一篇文献，并且包含了文献的标题和内容。</span>
+</p>
+</div>
+
+
+<div>
+<span style="margin-left:25px"></span>
+[
+<a class="pagelink" href="paper_1.htm">首页</a>
+<a class="pagelink" href="paper_1.htm">上一页</a>
+<a class="pagelink" href="paper_3.htm">下一页</a>
+<a class="pagelink" href="paper_6.htm">尾页</a>
+页码：2/6页
+]
+</div>
+
+<br><br><br>
+<div style="margin-left:25px">
+
+<img src="../../images/guanwang.gif">
+</div>
+</div>
+
+
+<div class="zhengwencenter">
+<p>
+检测报告由<a href="http://www.paperpass.com/" target="_blank">PaperPass</a>文献相似度检测系统生成
+</p>
+<p>
+Copyright © 2007-2015 PaperPass
+</p>
+</div>
+<div style="margin-bottom:400px"></div>
+</body>
+</html>
